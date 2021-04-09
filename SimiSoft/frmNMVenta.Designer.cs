@@ -29,6 +29,8 @@ namespace SimiSoft
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.Utils.SimpleContextButton simpleContextButton1 = new DevExpress.Utils.SimpleContextButton();
+            DevExpress.Utils.SimpleContextButton simpleContextButton2 = new DevExpress.Utils.SimpleContextButton();
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancelar = new DevExpress.XtraEditors.SimpleButton();
             this.lblFecha = new DevExpress.XtraEditors.LabelControl();
@@ -40,10 +42,12 @@ namespace SimiSoft
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.dtFecha = new System.Windows.Forms.DateTimePicker();
             this.txtFecha = new DevExpress.XtraEditors.TextEdit();
+            this.cbTipo = new DevExpress.XtraEditors.CheckedComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTipo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFecha.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbTipo.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnGuardar
@@ -106,6 +110,7 @@ namespace SimiSoft
             // 
             // txtTipo
             // 
+            this.txtTipo.Enabled = false;
             this.txtTipo.Location = new System.Drawing.Point(457, 70);
             this.txtTipo.Name = "txtTipo";
             this.txtTipo.Size = new System.Drawing.Size(100, 20);
@@ -124,9 +129,9 @@ namespace SimiSoft
             this.dtFecha.Location = new System.Drawing.Point(216, 69);
             this.dtFecha.Name = "dtFecha";
             this.dtFecha.Size = new System.Drawing.Size(22, 21);
-            this.dtFecha.TabIndex = 12;
+            this.dtFecha.TabIndex = 1;
             this.dtFecha.CloseUp += new System.EventHandler(this.dtFecha_CloseUp);
-           // 
+            // 
             // txtFecha
             // 
             this.txtFecha.Enabled = false;
@@ -135,6 +140,36 @@ namespace SimiSoft
             this.txtFecha.Size = new System.Drawing.Size(100, 20);
             this.txtFecha.TabIndex = 13;
             // 
+            // cbTipo
+            // 
+            this.cbTipo.EditValue = "";
+            this.cbTipo.Location = new System.Drawing.Point(563, 70);
+            this.cbTipo.Name = "cbTipo";
+            this.cbTipo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            simpleContextButton1.AlignmentOptions.Panel = DevExpress.Utils.ContextItemPanel.Center;
+            simpleContextButton1.AlignmentOptions.Position = DevExpress.Utils.ContextItemPosition.Far;
+            simpleContextButton1.Caption = "Paqueteria";
+            simpleContextButton1.Id = new System.Guid("27b06c8c-63b2-41db-845a-843f55a732c7");
+            simpleContextButton1.Name = "Paqueteria";
+            simpleContextButton2.AlignmentOptions.Panel = DevExpress.Utils.ContextItemPanel.Center;
+            simpleContextButton2.AlignmentOptions.Position = DevExpress.Utils.ContextItemPosition.Far;
+            simpleContextButton2.Caption = "Otro";
+            simpleContextButton2.Id = new System.Guid("dc1dd074-2d17-4176-8901-7dbbbce77814");
+            simpleContextButton2.Name = "Otro";
+            this.cbTipo.Properties.ContextButtons.Add(simpleContextButton1);
+            this.cbTipo.Properties.ContextButtons.Add(simpleContextButton2);
+            this.cbTipo.Properties.HotTrackSelectMode = DevExpress.XtraEditors.HotTrackSelectMode.SelectItemOnClick;
+            this.cbTipo.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.CheckedListBoxItem[] {
+            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "Eaqueteria"),
+            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "el otro")});
+            this.cbTipo.Properties.SelectAllItemCaption = "";
+            this.cbTipo.Properties.SelectAllItemVisible = false;
+            this.cbTipo.Properties.CloseUp += new DevExpress.XtraEditors.Controls.CloseUpEventHandler(this.cbTipo_Properties_CloseUp);
+            this.cbTipo.Size = new System.Drawing.Size(17, 20);
+            this.cbTipo.TabIndex = 3;
+            this.cbTipo.EditValueChanged += new System.EventHandler(this.cbTipo_EditValueChanged);
+            // 
             // frmNMVenta
             // 
             this.AcceptButton = this.btnGuardar;
@@ -142,6 +177,7 @@ namespace SimiSoft
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(658, 194);
+            this.Controls.Add(this.cbTipo);
             this.Controls.Add(this.txtFecha);
             this.Controls.Add(this.dtFecha);
             this.Controls.Add(this.labelControl4);
@@ -164,6 +200,7 @@ namespace SimiSoft
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTipo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFecha.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbTipo.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,5 +219,6 @@ namespace SimiSoft
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private System.Windows.Forms.DateTimePicker dtFecha;
         private DevExpress.XtraEditors.TextEdit txtFecha;
+        private DevExpress.XtraEditors.CheckedComboBoxEdit cbTipo;
     }
 }

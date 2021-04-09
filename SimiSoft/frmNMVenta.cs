@@ -132,5 +132,16 @@ namespace SimiSoft
             txtFecha.Text =
        dtFecha.Value.ToString("MM/dd/yyyy");
         }
+
+        private void cbTipo_Properties_CloseUp(object sender, DevExpress.XtraEditors.Controls.CloseUpEventArgs e)
+        {
+            txtTipo.Text = cbTipo.Text
+                ;
+        }
+
+        private void cbTipo_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
